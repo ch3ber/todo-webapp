@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
+import '../../styles/index.css';
 
 function TodoList(props) {
    return (
-      <section className="todo-list">
+      <section className="todo-container">
          {props.children}
       </section>
    );
