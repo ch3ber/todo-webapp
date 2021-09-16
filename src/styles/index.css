@@ -361,69 +361,152 @@ body {
    font-family: Helvetica, Arial, sans-serif;
    min-height: 100vh;
    display: grid;
-   place-content: center center;
-   align-items: center;
-   background-color: #f8f8f8;
-   color: #222;
-   padding: 5rem;
+   place-content: center;
+   background-color: #000839;
+   color: #fff;
 }
 #root {
-   max-width: 90%;
+   max-width: 80%;
    margin: 0 auto;
-   background-color: #c1c1c1;
+   margin-top: 3rem;
+   background-color: #005082;
    padding: 3rem;
-   border-radius: 1rem;
+   border-radius: 2rem;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
    gap: 3rem;
 }
 .todo-counter {
-   color: #444;
+   color: #FFA41B;
    text-align: center;
    font-size: 2.8rem;
 }
+@media (min-width: 768px) {
+   body {
+      font-size: 2.2rem;
+   }
+   .todo-counter {
+      font-size: 3.2rem;
+   }
+}
 .search {
    border: none;
-   width: 80%;
    padding: 1rem;
-   border-radius: 0.5rem;
+   border-radius: 1rem;
+   background-color: #00728A;
+   width: 85%;
+}
+.search::placeholder {
+   color: #f8f8f8;
 }
 .todo-container {
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
    width: 100%;
-   background-color: #dedede;
    border-radius: 1rem;
+   overflow: auto;
+   height: 35rem;
 }
 .todo {
    list-style: none;
    display: grid;
-   grid-template-columns: 1fr 2fr 1fr;
-   border-bottom: 3px solid #aaa;
+   grid-template-columns: 2fr 1fr;
+   background-color: #00A8CC;
+   border-radius: 1rem;
+   margin-bottom: 2rem;
+   overflow: hidden;
+   min-height: 10rem;
 }
-.todo:last-of-type { border: none; }
+@media (min-width: 1080px) {
+   .todo-container { height: 30rem; }
+}
+.todo:last-of-type { margin-bottom: 0; }
 .todo__text {
-   padding: 2rem;
-   border-radius: 0.5rem;
-   max-width: 100%;
+   padding: 1.5rem;
+   margin: 0;
 }
 .todo__text--completed { text-decoration: line-through; }
 .todo__icon {
    font-size: 2rem;
-   place-self: center;
+   place-self: end;
+   width: 70%;
+   height: 100%;
+   background-color: #002F4C;
+   display: grid;
+   place-content: center center;
 }
 .button {
-   display: inline;
-   width: 100%;
+   z-index: 1;
+   position: fixed;
+   height: 6rem;
+   width: 6rem;
+   margin-top: 3rem;
+   display: grid;
+   place-content: center center;
    border: none;
    background-color: #1185f8;
-   color: #111;
-   padding: 1rem 3rem;
-   font-size: 2.4rem;
-   border-radius: 0.5rem;
+   color: #f8f8f8;
+   padding: 2rem;
+   font-size: 3.5rem;
+   border-radius: 50%;
    cursor: pointer;
+   bottom: 2rem;
+   right: 2rem;
+   transition: transform 0.5s linear;
 }
-.button:active { width: 97%; }
+@media (min-width: 480px) {
+   .button {
+      padding: 4rem;
+      bottom: 5rem;
+      right: 5rem;
+   }
+}
+.button:active { transform: rotate(45deg); }
+
+/*modal*/
+.modal--show {
+   position: fixed;
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: rgba(0, 0, 0, 0.8);
+}
+.button--modal {
+   transform: rotate(135deg);
+}
+.modal {
+   width: fit-content;
+   margin: 0 auto;
+   padding: 4rem;
+   background-color: #005082;
+   border-radius: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 3rem;
+}
+.modal__textarea,
+.modal__buttons {
+   border: none;
+   padding: 1rem;
+   border-radius: 1rem;
+}
+.modal__buttons {
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+}
+.modal__buttons__button {
+   background-color: #000839;
+   color: #FFA41B;
+   font-weight: bold;
+   border: none;
+   padding: 1rem;
+   border-radius: 1rem;
+}
+/*https://colorhunt.co/palette/ffa41b00083900508200a8cc*/
