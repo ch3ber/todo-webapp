@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/index.css';
+import {FaTrashAlt} from 'react-icons/fa';
 
 function TodoItem(props) {
    return (
@@ -14,7 +15,7 @@ function TodoItem(props) {
             className={'todo__icon'}
             onClick={props.onDelete}
          >
-            &#215;
+            <FaTrashAlt fill="#fff" fontSize="3.5rem" />
          </span>
       </li>
    );

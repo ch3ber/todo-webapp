@@ -411,6 +411,7 @@ body {
    height: 35rem;
 }
 .todo {
+   color: #002c47;
    list-style: none;
    display: grid;
    grid-template-columns: 2fr 1fr;
@@ -428,7 +429,10 @@ body {
    padding: 1.5rem;
    margin: 0;
 }
-.todo__text--completed { text-decoration: line-through; }
+.todo__text--completed {
+   text-decoration: line-through;
+   font-weight: bold;
+}
 .todo__icon {
    font-size: 2rem;
    place-self: end;
@@ -437,6 +441,9 @@ body {
    background-color: #002F4C;
    display: grid;
    place-content: center center;
+}
+.todo__icon:hover svg {
+   fill: #f02222;
 }
 .button {
    z-index: 1;
@@ -448,15 +455,15 @@ body {
    place-content: center center;
    border: none;
    background-color: #1185f8;
-   color: #f8f8f8;
    padding: 2rem;
-   font-size: 3.5rem;
    border-radius: 50%;
    cursor: pointer;
    bottom: 2rem;
    right: 2rem;
    transition: transform 0.5s linear;
 }
+.button:hover { background-color: #08519a; }
+.button:hover svg { fill: #ccc; }
 @media (min-width: 480px) {
    .button {
       padding: 4rem;

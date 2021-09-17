@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/index.css';
+import {RiAddFill} from 'react-icons/ri';
 
 function CreateTodoButton(props) {
 
@@ -14,7 +15,9 @@ function CreateTodoButton(props) {
       <button
          className="button"
          onClick={() => onClickButton()}
-      >+</button>
+      >
+         <RiAddFill fill="#fff" fontSize="4rem"/>
+      </button>
    );
 }
 

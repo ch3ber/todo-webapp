@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-content-loader": "^6.0.3",
+    "react-icons": "^4.2.0"
   }
 }
