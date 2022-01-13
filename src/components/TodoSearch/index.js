@@ -1,26 +1,20 @@
-import React from 'react';
-import { TodoContex } from '../../TodoContex';
-import '../../styles/index.css';
+import React from "react";
+import "../../styles/index.css";
 
-function TodoSearch() {
-   const {
-      searchValue,
-      setSearchValue,
-   } = React.useContext(TodoContex);
+function TodoSearch({ searchValue, setSearchValue, loading }) {
+  const onSearchValueChange = (event) => {
+    setSearchValue(event.target.value);
+  };
 
-   const onSearchValueChange = (event) => {
-      console.log(event.target.value);
-      setSearchValue(event.target.value);
-   };
-
-   return (
-      <input
-         className="search"
-         placeholder="Buscar..."
-         value={searchValue}
-         onChange={onSearchValueChange}
-      />
-   );
+  return (
+    <input
+      className={`search ${loading && "todo-counter--loading"}`}
+      disabled={loading}
+      placeholder="Buscar..."
+      value={searchValue}
+      onChange={onSearchValueChange}
+    />
+  );
 }
 
-export {TodoSearch};
+export { TodoSearch };
